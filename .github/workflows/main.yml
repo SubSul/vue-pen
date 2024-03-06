@@ -1,0 +1,20 @@
+# This workflow will create a release
+name: "Publish new release"
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  publish-new-release:
+    name: "Publish a new release"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Close release issue
+        shell: bash
+        run: |
+          echo "Closing release issue ${github.event.issue.number}" >> $GITHUB_ENV
+          gh issue close \
+            --reason "Automated closure triggered by release workflow" \
+            --comment "This issue is being closed as part of the release workflow." \
+            "${{ github.event.issue.number }}"
