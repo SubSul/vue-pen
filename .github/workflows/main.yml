@@ -17,6 +17,6 @@ jobs:
         run: |
           echo "Closing release issue $ISSUE_NUMBER" >> $GITHUB_ENV
           gh issue close \
-            --reason "Automated closure due to release workflow" \
+            --reason "completed" \
             --comment "This issue is being closed as part of the release workflow." \
             $ISSUE_NUMBER
