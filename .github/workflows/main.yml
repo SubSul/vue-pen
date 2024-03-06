@@ -13,6 +13,7 @@ jobs:
       - name: Close release issue
         env:
           ISSUE_NUMBER: ${{ github.event.issue.number }}
+          GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
           echo "Closing release issue $ISSUE_NUMBER" >> $GITHUB_ENV
