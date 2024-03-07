@@ -10,6 +10,9 @@ jobs:
     name: "Publish a new release"
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - name: Close release issue
         env:
           ISSUE_NUMBER: ${{ github.event.issue.number }}
