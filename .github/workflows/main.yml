@@ -16,7 +16,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
-          echo "Closing release issue $ISSUE_NUMBER"
+          echo "Closing release issue ${ISSUE_NUMBER}"
           gh issue close \
             --reason "completed" \
             --comment "This issue is being closed as part of the release workflow." \
